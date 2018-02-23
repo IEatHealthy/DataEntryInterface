@@ -12,4 +12,13 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="DataEntryForm\food.jpg" />
+    <None Remove="DataEntryForm\form.html" />
+    <None Remove="DataEntryForm\recipeFormJS.js" />
+    <None Remove="DataEntryForm\recipeFormStyles.css" />
+    <None Remove="Views\Home\food.jpg" />
+    <None Remove="Views\Home\recipeFormJS.js" />
+    <None Remove="Views\Home\recipeFormStyles.css" />
+  </ItemGroup>
 </Project>
