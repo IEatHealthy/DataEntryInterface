@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{EDE35B57-3C10-4198-9706-6420FFD62BEA}|Default">
   <MonoDevelop.Ide.ItemProperties.IEatHealthy PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IEatHealthy/wwwroot/css/recipeFormStyles.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IEatHealthy/Controllers/HomeController.cs">
     <Files>
       <File FileName="IEatHealthy/Views/Home/Index2.cshtml" Line="2" Column="1" />
       <File FileName="IEatHealthy/Models/ErrorViewModel.cs" Line="10" Column="6" />

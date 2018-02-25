@@ -20,5 +20,8 @@
     <None Remove="Views\Home\food.jpg" />
     <None Remove="Views\Home\recipeFormJS.js" />
     <None Remove="Views\Home\recipeFormStyles.css" />
+    <None Remove="EmptyHTMLFile.html" />
+    <None Remove="addIngredients.cshtml" />
+    <None Remove="Views\Home\Ingredients2.html" />
   </ItemGroup>
 </Project>

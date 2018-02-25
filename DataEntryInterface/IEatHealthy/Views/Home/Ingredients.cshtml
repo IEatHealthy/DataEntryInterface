@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Ingredients";
+}
+<html>
+    <head>
+        <title> Add a Recipe </title>
+        <script src="@Url.Content("/js/recipeFormJS.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("/css/recipeFormStyles.css")" media="screen" />
+    </head>
+    <body>
+        <div class="title">
+            Add Ingredients
+        </div>
+        <form name="ingredients" onsubmit="submitForm()">
+            <div class="box2">
+                Ingredients
+            </div>
+            <div class="box">
+                <div id="ingredients">
+                    <input type="text" placeholder="Ingredient" name="ingredients"><br>
+                    <input type="text" placeholder="Ingredient" name="ingredients"><br>
+                    <input type="text" placeholder="Ingredient" name="ingredients"><br>
+                    <input type="text" placeholder="Ingredient" name="ingredients"><br>
+                </div>
+                <input type="button" value="Add Another Ingredient" onClick="addInput('ingredients', 'Ingredient');"><br>
+            </div>
+            <div class="buttonField">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </body>
+</html>

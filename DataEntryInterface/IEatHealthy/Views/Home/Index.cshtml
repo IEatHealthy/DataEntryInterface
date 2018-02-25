@@ -11,25 +11,16 @@
 		<div class="title">
 			Add A Recipe
 		</div>
-		
 		<form name="recipeForm" onsubmit="submitForm()">
-			
-			
-			<!--- Name -------------------------------------------------------->
 			<div id="name" class="box2">
 				Name
 			</div>
-			
 			<div class="box" >
 				<input type="text" placeholder="Name of Recipe" name="recipe"><br>
 			</div>
-			
-			
-			<!--- Diffculty --------------------------------------------------->
-			<div class="box2">
+            <div class="box2">
 				Difficulty
 			</div>
-			
 			<div class="box">
 				<smallerText>
 				Easy    <input type="radio" name="difficulty" value="easy"><br>
@@ -37,23 +28,15 @@
 				Hard <input type="radio" name="difficulty" value="hard"><br>
 				</smallerText>
 			</div>
-			
-			
-			<!--- Servings ---------------------------------------------------->
 			<div class="box2">
 				Servings
 			</div>
-			
 			<div class="box">
 				<input type="text" placeholder="Number of Servings" name="servings"><br>
 			</div>
-			
-			
-			<!--- Time -------------------------------------------------------->
 			<div class="box2">
 				Time
 			</div>
-			
 			<div class="box">
 				<smallerText>
 				Prep
@@ -64,13 +47,9 @@
 				<br><input type="text" placeholder="Minutes to Completion" name="readyMins"><br>
 				</smallerText>
 			</div>
-			
-			
-			<!--- Ingredients ------------------------------------------------->
 			<div class="box2">
 				Ingredients
 			</div>
-			
 			<div class="box">
 				<div id="ingredients">
 					<input type="text" placeholder="Ingredient" name="ingredients"><br>
@@ -80,13 +59,9 @@
 				</div>
 				<input type="button" value="Add Another Ingredient" onClick="addInput('ingredients', 'Ingredient');"><br>
 			</div>
-			
-			
-			<!--- Steps ------------------------------------------------------->
 			<div class="box2">
 				Steps
 			</div>
-			
 			<div class="box">
 				<div id="steps">
 					<textarea placeholder="Step 1" name="steps"></textarea><br>
@@ -96,13 +71,9 @@
 				</div>
 				<input type="button" value="Add Another Step" onClick="addStep('steps', 'Step');"><br>
 			</div>
-			
-			
-			<!--- Tools ------------------------------------------------------->
 			<div class="box2">
 				Special Tools Needed
 			</div>
-			
 			<div class="box">
 				<div id="tools">
 					<input type="text" placeholder="Tool" name="tools"><br>
@@ -110,42 +81,31 @@
 				
 				<input type="button" value="Add Another Tool" onClick="addInput('tools', 'Tool');"><br>
 			</div>
-			
-			
-			<!--- Description ------------------------------------------------->
 			<div class="box2">
 				Description of meal
 			</div>
-			
 			<div class="box">
-				<textarea placeholder="Description of Meal" name="description"></textarea><br>
-			</div>
-			
-			
-			<!--- Nutrition Facts --------------------------------------------->
+                <textarea placeholder="Description of Meal" name="description"></textarea><br>
+                <div class="backImgDesc">
+                    Upload Photo of Meal
+                </div>
+                <br><input type="file" name="image"><br>			
+            </div>
 			<div class="box2">
 				Nutrition Facts (Per Serving)
 			</div>
-			
 			<div class="box">
 				<input type="text" placeholder="Calories" name="calories"><br>
 				<input type="text" placeholder="Fat in grams" name="fat"><br>
 				<input type="text" placeholder="Protein in grams" name="protein"><br>
 				<input type="text" placeholder="Carbohydrates in grams" name="carbohydrates"><br>
 			</div>
-			
-			
-			<!--- Author ------------------------------------------------------>
 			<div class="box2">
 				Author
 			</div>
-			
 			<div class="box">
 				<input type="text" placeholder="Name of Author" name="author"><br>
 			</div>
-			
-			
-			<!--- Submit button ----------------------------------------------->
 			<div class="buttonField">
 				<input type="submit" value="Submit Form">
 			</div>
