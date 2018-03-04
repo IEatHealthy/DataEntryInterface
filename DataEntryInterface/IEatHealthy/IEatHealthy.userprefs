@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{A11137BB-D6E3-4FA5-ABEA-8F8C77184DA4}|Default">
+  <MonoDevelop.Ide.ItemProperties.IEatHealthy PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Models/ErrorViewModel.cs" Line="10" Column="6" />
+      <File FileName="Models/RecipeModel.cs" Line="3" Column="20" />
+      <File FileName="Startup.cs" Line="35" Column="54" />
+      <File FileName="MongoClientFactory.cs" Line="29" Column="30" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

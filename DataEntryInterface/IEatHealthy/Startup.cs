@@ -6,6 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.HttpOverrides;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
+using IEatHealthy.Models;
+using Unity.AspNet.Mvc;
+using IEatHealthy;
 
 namespace IEatHealthy
 {
@@ -22,6 +28,18 @@ namespace IEatHealthy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //makes a class mapping for the recipe class
+            //so it can be serialized as bson object
+            BsonClassMap.RegisterClassMap<Recipe>(cm =>
+            {
+                cm.AutoMap();
+            });
+
+            //connect to mongo
+            MongoClient client = MongoClientFactory.GetInstance();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +54,11 @@ namespace IEatHealthy
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -44,6 +67,7 @@ namespace IEatHealthy
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
