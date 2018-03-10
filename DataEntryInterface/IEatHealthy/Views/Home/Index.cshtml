@@ -1,114 +1,118 @@
-@{
-    ViewData["Title"] = "Home Page";
-}
 <html>
-	<head>
-		<title> Add a Recipe </title>
-		<script src="@Url.Content("/js/recipeFormJS.js")"></script>
-		<link rel="stylesheet" type="text/css" href="@Url.Content("/css/recipeFormStyles.css")" media="screen" />
-	</head>
-	<body>
-		<div class="title">
-			Add A Recipe
-		</div>
-		<form name="recipeForm" onsubmit="submitForm()">
-			<div id="name" class="box2">
-				Name
-			</div>
-			<div class="box" >
-				<input type="text" placeholder="Name of Recipe" name="recipe"><br>
-			</div>
-            <div class="box2">
-				Difficulty
-			</div>
-			<div class="box">
-				<smallerText>
-				Easy    <input type="radio" name="difficulty" value="easy"><br>
-				Intermediate  <input type="radio" name="difficulty" value="intermediate"><br>
-				Hard <input type="radio" name="difficulty" value="hard"><br>
-				</smallerText>
-			</div>
-			<div class="box2">
-				Servings
-			</div>
-			<div class="box">
-				<input type="text" placeholder="Number of Servings" name="servings"><br>
-			</div>
-			<div class="box2">
-				Time
-			</div>
-			<div class="box">
-				<smallerText>
-				Prep
-				<br><input type="text" placeholder="Minutes to Completion" name="prepMins"><br>
-				Cook
-				<br><input type="text" placeholder="Minutes to Completion" name="cookMins"><br>
-				Ready In
-				<br><input type="text" placeholder="Minutes to Completion" name="readyMins"><br>
-				</smallerText>
-			</div>
-			<div class="box2">
-				Ingredients
-			</div>
-			<div class="box">
-				<div id="ingredients">
-					<input type="text" placeholder="Ingredient" name="ingredients"><br>
-					<input type="text" placeholder="Ingredient" name="ingredients"><br>
-					<input type="text" placeholder="Ingredient" name="ingredients"><br>
-					<input type="text" placeholder="Ingredient" name="ingredients"><br>
-				</div>
-				<input type="button" value="Add Another Ingredient" onClick="addInput('ingredients', 'Ingredient');"><br>
-			</div>
-			<div class="box2">
-				Steps
-			</div>
-			<div class="box">
-				<div id="steps">
-					<textarea placeholder="Step 1" name="steps"></textarea><br>
-					<textarea placeholder="Step 2" name="steps"></textarea><br>
-					<textarea placeholder="Step 3" name="steps"></textarea><br>
-					<textarea placeholder="Step 4" name="steps"></textarea><br>
-				</div>
-				<input type="button" value="Add Another Step" onClick="addStep('steps', 'Step');"><br>
-			</div>
-			<div class="box2">
-				Special Tools Needed
-			</div>
-			<div class="box">
-				<div id="tools">
-					<input type="text" placeholder="Tool" name="tools"><br>
-				</div>
-				
-				<input type="button" value="Add Another Tool" onClick="addInput('tools', 'Tool');"><br>
-			</div>
-			<div class="box2">
-				Description of meal
-			</div>
-			<div class="box">
-                <textarea placeholder="Description of Meal" name="description"></textarea><br>
-                <div class="backImgDesc">
-                    Upload Photo of Meal
+    <head>
+        <title> Add a Recipe </title>
+        <script src="@Url.Content("/js/recipeFormJS.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/lib/bootstrap/bootstrap.css")" media="screen"/>
+        <!---<link rel="stylesheet" type="text/css" href="@Url.Content("~/css/recipeFormStyles.css")" media="screen" />-->
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/recipeFormStyles.css")" media="screen" />
+
+    </head>
+    <body>
+        <div class="jumbotron text-center"> 
+            <container> 
+                <h1>Add A Recipe</h1>
+            </container>
+        </div>
+
+        <form>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                Name
                 </div>
-                <br><input type="file" name="image"><br>			
-            </div>
-			<div class="box2">
-				Nutrition Facts (Per Serving)
-			</div>
-			<div class="box">
-				<input type="text" placeholder="Calories" name="calories"><br>
-				<input type="text" placeholder="Fat in grams" name="fat"><br>
-				<input type="text" placeholder="Protein in grams" name="protein"><br>
-				<input type="text" placeholder="Carbohydrates in grams" name="carbohydrates"><br>
-			</div>
-			<div class="box2">
-				Author
-			</div>
-			<div class="box">
-				<input type="text" placeholder="Name of Author" name="author"><br>
-			</div>
-			<div class="buttonField">
-				<input type="submit" value="Submit Form">
-			</div>
-		</form>
-	</body>
+                <div class="panel-body">
+                    <input type="text" class="form-control"  placeholder="Name of Recipe" name="recipe"><br>
+                </div> 
+                <div class="panel-heading">
+                    Difficulty
+                 </div>
+                <div class="panel-body">
+                    <smallerText>
+                    Easy    <input type="radio" name="difficulty" value="easy"><br>
+                    Intermediate  <input type="radio" name="difficulty" value="intermediate"><br>
+                    Hard <input type="radio" name="difficulty" value="hard"><br>
+                    </smallerText>
+                </div>
+                <div class="panel-heading">
+                    Servings
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" placeholder="Number of Servings" name="servings"><br>
+                </div>
+                <div class="panel-heading">
+                    Time
+                </div>
+                <div class="panel-body">
+                    <smallerText>
+                    Prep
+                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="prepMins"><br>
+                    Cook
+                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="cookMins"><br>
+                    Ready In
+                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="readyMins"><br>
+                    </smallerText>
+                </div>
+                <div class="panel-heading">
+                    Ingredients
+                </div>
+                <div class="panel-body">
+                    <div id="ingredients">
+                        <input type="text" class="form-control" placeholder="Ingredient" name="ingredients"><br>
+                        <input type="text" class="form-control" placeholder="Ingredient" name="ingredients"><br>
+                        <input type="text" class="form-control" placeholder="Ingredient" name="ingredients"><br>
+                        <input type="text" class="form-control" placeholder="Ingredient" name="ingredients"><br>
+                    </div>
+                    <input type="button" class="btn" value="Add Another Ingredient" onClick="addInput('ingredients', 'Ingredient');"><br>
+                </div>
+                <div class="panel-heading">
+                    Steps
+                </div>
+                <div class="panel-body">
+                    <div id="steps">
+                        <textarea class="form-control" placeholder="Step 1" name="steps"></textarea><br>
+                        <textarea class="form-control" placeholder="Step 2" name="steps"></textarea><br>
+                        <textarea class="form-control" placeholder="Step 3" name="steps"></textarea><br>
+                        <textarea class="form-control" placeholder="Step 4" name="steps"></textarea><br>
+                    </div>
+                    <input type="button" class="btn" value="Add Another Step" onClick="addStep('steps', 'Step');"><br>
+                </div>
+                <div class="panel-heading">
+                    Special Tools Needed
+                </div>
+                <div class="panel-body">
+                    <div id="tools">
+                        <input type="text" class="form-control" placeholder="Tool" name="tools"><br>
+                    </div>
+                    <input type="button" class="btn" value="Add Another Tool" onClick="addInput('tools', 'Tool');"><br>
+                </div>
+                <div class="panel-heading">
+                    Description of meal
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control" placeholder="Description of Meal" name="description"></textarea><br>
+                    <div class="backImgDesc">
+                        Upload Photo of Meal
+                    </div>
+                    <br><input type="file" name="image"><br>            
+                </div>
+                <div class="panel-heading">
+                    Nutrition Facts (Per Serving)
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" placeholder="Calories" name="calories"><br>
+                    <input type="text" class="form-control" placeholder="Fat in grams" name="fat"><br>
+                    <input type="text" class="form-control" placeholder="Protein in grams" name="protein"><br>
+                    <input type="text" class="form-control" placeholder="Carbohydrates in grams" name="carbohydrates"><br>
+                </div>
+                <div class="panel-heading">
+                    Author
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" placeholder="Name of Author" name="author"><br>
+                </div>
+            </div> 
+            <div class="text-center">
+                    <input type="submit" class="btn btn-lg" value="Submit Form">
+            </div> 
+       </form>
+    </body>
 </html>

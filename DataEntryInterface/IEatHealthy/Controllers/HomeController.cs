@@ -12,28 +12,31 @@ namespace IEatHealthy.Controllers
     {
         public IActionResult Index()
         {
+
+            ViewData["Title"] = "Add a Recipe";
             return View();
         }
 
         public IActionResult Ingredients()
         {
+            ViewData["Title"] = "Add Ingredients";
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult EditRecipes()
         {
-            ViewData["Message"] = "Your application description page.";
-    
+
+            ViewData["Title"] = "Edit Recipes";
             return View();
         }
 
-        public IActionResult Contact()
+
+        public IActionResult EditIngredients()
         {
-            ViewData["Message"] = "Your contact page.";
 
+            ViewData["Title"] = "Edit Ingredinents";
             return View();
         }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
