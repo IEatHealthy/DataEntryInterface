@@ -1,0 +1,11 @@
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/bin/Debug/netcoreapp2.0/IEatHealthy.deps.json
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/bin/Debug/netcoreapp2.0/IEatHealthy.runtimeconfig.json
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/bin/Debug/netcoreapp2.0/IEatHealthy.runtimeconfig.dev.json
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/bin/Debug/netcoreapp2.0/IEatHealthy.dll
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/bin/Debug/netcoreapp2.0/IEatHealthy.pdb
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.csproj.CoreCompileInputs.cache
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.AssemblyInfoInputs.cache
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.AssemblyInfo.cs
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.dll
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.pdb
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/obj/Debug/netcoreapp2.0/IEatHealthy.csprojResolveAssemblyReference.cache

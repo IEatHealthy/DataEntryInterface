@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace IEatHealthy.Models
 {
@@ -11,20 +13,24 @@ namespace IEatHealthy.Models
         Hard = 3
     };
 
+    public class IngredientItem {
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string IngredientId { get; set; }
+        public string UnitOfMeasure { get; set; }
+        public float Amount { get; set; }
+    }
+
     public class Recipe
     {
-        //public ObjectId ObjectId { get; private set; }
         public string Name { get; set; }
         public DifficultyType Difficulty { get; set; }
         public float Servings { get; set; }
         public float PrepTime { get; set; }
         public float CookTime { get; set; }
         public float ReadyInTime { get; set; }
-        //TODO switch this array out with array of Ingredient model class
-        //TODO don't use array as property, it's dangerous out there
-        public string[] Ingredients { get; set; }
-        public string[] Steps { get; set; }
-        public string[] ToolsNeeded { get; set; }
+        public List<IngredientItem> Ingredients { get; set; }
+        public List<string> Steps { get; set; }
+        public List<string> ToolsNeeded { get; set; }
         public string Description { get; set; }
         //TODO need to handle image data
         public string Author { get; set; }

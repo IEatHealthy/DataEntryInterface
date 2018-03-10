@@ -29,9 +29,18 @@ namespace IEatHealthy
         {
             services.AddMvc();
 
-            //makes a class mapping for the recipe class
-            //so it can be serialized as bson object
+            //auto map all classes
             BsonClassMap.RegisterClassMap<Recipe>(cm =>
+            {
+                cm.AutoMap();
+            });
+
+            BsonClassMap.RegisterClassMap<Ingredient>(cm =>
+            {
+                cm.AutoMap();
+            });
+
+            BsonClassMap.RegisterClassMap<IngredientItem>(cm =>
             {
                 cm.AutoMap();
             });

@@ -1,0 +1,14 @@
+/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=IEatHealthy
+--content-root=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Home/About.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Home/Contact.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Home/Index.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Home/Index2.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Home/Ingredients.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Shared/Error.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Shared/_Layout.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/Shared/_ValidationScriptsPartial.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/_ViewImports.cshtml
+--file=/Users/Evan/Documents/cs472/DataEntryInterface/DataEntryInterface/IEatHealthy/Views/_ViewStart.cshtml

@@ -1,0 +1,83 @@
+/* CSS file for recipe form */
+
+body {
+	background-image: url("../images/food.jpg");
+}
+
+.title {
+    font-family: 'BenchNine', sans-serif;
+    width: 40%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 90px;
+    background: #D7D7C1;
+    border-radius: 25px;
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold
+}
+
+.box{
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 80%;
+	padding: 20px;
+	background: #FFFFFF;
+	font-size: 30px;
+	margin: auto;
+	margin-bottom: 0px;
+}
+
+.box2{
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 80%;
+	padding: 20px;
+	background: #D9D9D9;
+	font-size: 30px;
+	margin: auto;
+	margin-bottom: 0px;
+}
+
+.backImgDesc {
+    background-color: #D9D9D9;
+    width: 150px
+}
+
+input[type="text"] {
+	width: 55%;
+	margin-bottom: 15px;
+}
+
+input[type="button"] {
+	width: 40%;
+	margin-bottom: 15px;
+	border-style: inset;
+}
+
+input[type="submit"] {
+    width: 30%;
+    background-color: #D7D7C1;
+    border: none;
+    border-radius: 25px;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: bold
+}
+
+.box, smallerText {
+	font-size: 15px;
+}
+
+textarea {
+	resize: vertical;
+	margin-bottom: 15px;
+	width: 55%;
+	border-style: inset;
+}
+
+.buttonField {
+	text-align: center;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
