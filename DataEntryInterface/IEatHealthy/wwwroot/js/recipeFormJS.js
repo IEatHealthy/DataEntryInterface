@@ -14,11 +14,20 @@ function stopSubmit(event)
     }
 }
 
-//Adds another input field.
-function addInput(divName, placeholder)
+//Adds another ingredient field
+function addIngredient(divName)
 {
     var newDiv = document.createElement('div');
-    newDiv.innerHTML = "<input type='text' class='form-control' style='margin-bottom: 20px' placeholder='"+ placeholder + "'name='" + divName + "'>";
+    newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
+                        <div class='col-md-4'>\
+                        <input type='text' class='form-control' placeholder='Ingredient' name='ingredients'>\
+                        </div>\
+                        <div class='col-md-4'>\
+                        <input type='text' class='form-control' placeholder='Amount' name='amounts'>\
+                        </div>\
+                        <div class='col-md-4'>\
+                        <input type='text' class='form-control' placeholder='Unit of Measure' name='units'>\
+                        </div>";
     document.getElementById(divName).appendChild(newDiv);
 }
 
@@ -29,5 +38,13 @@ function addStep(divName, placeHolder)
     newdiv.innerHTML = "<textarea class='form-control' style='margin-bottom: 20px' placeholder='"+ placeHolder + " " + stepCounter + "'name='" + divName + "'></textarea>";
     document.getElementById(divName).appendChild(newdiv);
     stepCounter++;
+}
+
+//Generic function for adding another input field.
+function addInput(divName, placeHolder)
+{
+    var newdiv = document.createElement('div');
+    newdiv.innerHTML = "<input type='text' class='form-control' style='margin-bottom: 20px' placeholder='" + placeHolder + "'name='" + divName + "'>";
+    document.getElementById(divName).appendChild(newdiv);
 }
 
