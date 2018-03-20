@@ -34,5 +34,14 @@ namespace IEatHealthy.Models
             Console.WriteLine("Ingredient No.: " + NBD_No);
             Console.WriteLine("Description: " + Shrt_Desc);
         }
+
+        public string printIngredient()
+        {
+            return NBD_No + "\n" + Shrt_Desc + "\n" + GmWt1 + "\n" + GmWt_Desc1
+                + "\n" + GmWt2 + "\n" + GmWt_Desc2 + "\n" + Calories + "\n" + Protein
+                + "\n" + Fat + "\n" + Carbohydate + "\n" + Fiber + "\n" + Sugar
+                + "\n" + Calcium + "\n" + Iron + "\n" + Potassium + "\n" + Sodium
+                + "\n" + Vitamin_C + "\n" + Vit_A_IU + "\n" + Vit_D_IU + "\n" + Cholestrol;
+        }
     }
 }

@@ -30,4 +30,7 @@
     <Content Remove="Views\Home\Contact.cshtml" />
     <Content Remove="Views\Home\About.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\IngredientsModel.cs" />
+  </ItemGroup>
 </Project>

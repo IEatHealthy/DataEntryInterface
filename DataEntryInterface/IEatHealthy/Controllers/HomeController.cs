@@ -17,6 +17,7 @@ namespace IEatHealthy.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Ingredients()
         {
             ViewData["Title"] = "Add Ingredients";
