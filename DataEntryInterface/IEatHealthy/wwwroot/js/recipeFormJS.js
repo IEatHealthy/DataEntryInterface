@@ -2,6 +2,7 @@
 
 
 var stepCounter = 5; //Number of steps to display.
+var ingredientCounter = 4; //Number of ingredients.
 
 document.onkeypress = stopSubmit; //Checks for any key press event.
 
@@ -20,31 +21,33 @@ function addIngredient(divName)
     var newDiv = document.createElement('div');
     newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
                         <div class='col-md-4'>\
-                        <input type='text' class='form-control' placeholder='Ingredient' name='ingredients'>\
+                        <input class='form-control' id='Ingredients[" + ingredientCounter + "].IngredientId' name='Ingredients[" + ingredientCounter + "].IngredientId' placeholder='Ingredient' type='text' value='' />\
                         </div>\
                         <div class='col-md-4'>\
-                        <input type='text' class='form-control' placeholder='Amount' name='amounts'>\
+                        <input class='form-control' id='Ingredients[" + ingredientCounter + "].Amount' name='Ingredients[" + ingredientCounter + "]Amount' placeholder='Amount' type='text' value='' />\
                         </div>\
                         <div class='col-md-4'>\
-                        <input type='text' class='form-control' placeholder='Unit of Measure' name='units'>\
+                        <input class='form-control' id='Ingredients[" + ingredientCounter + "].UnitOfMeasure' name='Ingredients[" + ingredientCounter + "].UnitOfMeasure' placeholder='Unit of Measure' type='text' value='' />\
                         </div>";
     document.getElementById(divName).appendChild(newDiv);
+    ingredientCounter++;
 }
 
 //Adds another input field (specifically adds a 'step' input field).
-function addStep(divName, placeHolder)
+function addStep(divName)
 {
     var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<textarea class='form-control' style='margin-bottom: 20px' placeholder='"+ placeHolder + " " + stepCounter + "'name='" + divName + "'></textarea>";
+    newdiv.innerHTML = "<textarea class='form-control form-group' id='Steps' name='Steps' placeholder='Step " + stepCounter + "'>";
+
     document.getElementById(divName).appendChild(newdiv);
     stepCounter++;
 }
 
 //Generic function for adding another input field.
-function addInput(divName, placeHolder)
+function addInput(divName)
 {
     var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<input type='text' class='form-control' style='margin-bottom: 20px' placeholder='" + placeHolder + "'name='" + divName + "'>";
+    newdiv.innerHTML = "<input type='text' class='form-control form-group' placeholder='Tool' id='ToolsNeeded' name='ToolsNeeded' >";
     document.getElementById(divName).appendChild(newdiv);
 }
 

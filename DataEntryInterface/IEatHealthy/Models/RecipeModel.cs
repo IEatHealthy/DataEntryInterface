@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using MongoDB.Bson;

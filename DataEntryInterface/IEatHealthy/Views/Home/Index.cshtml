@@ -1,3 +1,5 @@
+@model IEatHealthy.Models.Recipe;
+
 <html>
     <head>
         <title> Add a Recipe </title>
@@ -13,129 +15,128 @@
             </container>
         </div>
 
-        <form>
+        <form method="post" asp-action="Index" asp-controller="Recipe" >
             <div class="panel panel-default">
                 <div class="panel-heading">
-                Name
+                    Name
                 </div>
                 <div class="panel-body">
-                    <input type="text" class="form-control"  placeholder="Name of Recipe" name="recipe"><br>
+                    @Html.TextBox("Name", null, new{ @class = "form-control form-group", placeholder ="Name of Recipe"})
                 </div> 
                 <div class="panel-heading">
                     Difficulty
                  </div>
                 <div class="panel-body">
-                    <smallerText>
-                    Easy    <input type="radio" name="difficulty" value="easy"><br>
-                    Intermediate  <input type="radio" name="difficulty" value="intermediate"><br>
-                    Hard <input type="radio" name="difficulty" value="hard"><br>
-                    </smallerText>
+                    Easy @Html.RadioButton("Difficulty", DifficultyType.Easy, true)
+                    <br>
+                    Intermediate  @Html.RadioButton("Difficulty", DifficultyType.Intermediate, false)
+                    <br>
+                    Hard @Html.RadioButton("Difficulty", DifficultyType.Hard, false)
+                    <br>
                 </div>
                 <div class="panel-heading">
                     Servings
                 </div>
                 <div class="panel-body">
-                    <input type="text" class="form-control" placeholder="Number of Servings" name="servings"><br>
+                    @Html.TextBox("Servings", null, new{ @class = "form-control form-group", placeholder ="Number of Servings"})
                 </div>
                 <div class="panel-heading">
                     Time
                 </div>
                 <div class="panel-body">
-                    <smallerText>
                     Prep
-                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="prepMins"><br>
+                    <br>@Html.TextBox("PrepTime", null, new{ @class = "form-control form-group", placeholder ="Minutes to Completion"})
                     Cook
-                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="cookMins"><br>
+                    <br>@Html.TextBox("CookTime", null, new{ @class = "form-control form-group", placeholder ="Minutes to Completion"})
                     Ready In
-                    <br><input type="text" class="form-control" placeholder="Minutes to Completion" name="readyMins"><br>
-                    </smallerText>
+                    <br>@Html.TextBox("ReadyInTime", null, new{ @class = "form-control form-group", placeholder ="Minutes to Completion"})
                 </div>
                 <div class="panel-heading">
                     Ingredients
                 </div>
                <div class="panel-body">
-                    <div id="ingredients">
+                    <div id="ingredients[]">
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
-                                <div class="col-md-4"> 
-                                    <input type="text" class="form-control"  placeholder="Ingredient" name="ingredients">
+                                <div class="col-md-4">
+                                    @Html.TextBox("Ingredients[0].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control" placeholder="Amount" name="amount">
+                                    @Html.TextBox("Ingredients[0].Amount", null, new{ @class = "form-control", placeholder ="Amount"})
                                 </div> 
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control"  placeholder="Unit of Measure" name="units">
+                                    @Html.TextBox("Ingredients[0].UnitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})
                                 </div>
                             </div>
                         </div>
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
-                                <div class="col-md-4"> 
-                                    <input type="text" class="form-control"  placeholder="Ingredient" name="ingredients">
+                                <div class="col-md-4">
+                                    @Html.TextBox("Ingredients[1].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control" placeholder="Amount" name="amounts">
+                                    @Html.TextBox("Ingredients[1].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                    
                                 </div> 
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control"  placeholder="Unit of Measure" name="units">
+                                    @Html.TextBox("Ingredients[1].UnitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})                                    
                                 </div>
                             </div>
                         </div>
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
-                                <div class="col-md-4"> 
-                                    <input type="text" class="form-control"  placeholder="Ingredient" name="ingredients">
+                                <div class="col-md-4">
+                                    @Html.TextBox("Ingredients[2].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})                                    
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control" placeholder="Amount" name="amounts">
+                                    @Html.TextBox("Ingredients[2].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                    
                                 </div> 
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control"  placeholder="Unit of Measure" name="units">
-                                </div>
+                                    @Html.TextBox("Ingredients[2].UnitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})                                    
+                                </div>                            
                             </div>
                         </div>
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
-                                <div class="col-md-4"> 
-                                    <input type="text" class="form-control"  placeholder="Ingredient" name="ingredients">
+                                <div class="col-md-4">
+                                    @Html.TextBox("Ingredients[3].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})                                    
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control" placeholder="Amount" name="amounts">
+                                    @Html.TextBox("Ingredients[3].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                   
                                 </div> 
                                 <div class="col-md-4">
-                                    <input type="text"  class="form-control"  placeholder="Unit of Measure" name="units">
+                                    @Html.TextBox("Ingredients[3].UnitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <input type="button" class="btn" value="Add Another Ingredient" onClick="addIngredient('ingredients');"><br>
+                    <input type="button" class="btn form-group" value="Add Another Ingredient" onClick="addIngredient('ingredients[]');"><br>
                 </div>
                 <div class="panel-heading">
                     Steps
                 </div>
                 <div class="panel-body">
-                    <div id="steps">
-                        <textarea class="form-control" placeholder="Step 1" name="steps"></textarea><br>
-                        <textarea class="form-control" placeholder="Step 2" name="steps"></textarea><br>
-                        <textarea class="form-control" placeholder="Step 3" name="steps"></textarea><br>
-                        <textarea class="form-control" placeholder="Step 4" name="steps"></textarea><br>
+                    <div id="steps[]">
+                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 1"})
+                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 2"})
+                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 3"})
+                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 4"})
                     </div>
-                    <input type="button" class="btn" value="Add Another Step" onClick="addStep('steps', 'Step');"><br>
+                    <input type="button" class="btn form-group" value="Add Another Step" onClick="addStep('steps[]');"><br>
                 </div>
                 <div class="panel-heading">
                     Special Tools Needed
                 </div>
                 <div class="panel-body">
-                    <div id="tools">
-                        <input type="text" class="form-control" placeholder="Tool" name="tools"><br>
+                    <div id="tools[]">
+                        @Html.TextBox("ToolsNeeded", null, new{ @class="form-control form-group", placeholder="Tool"})
                     </div>
-                    <input type="button" class="btn" value="Add Another Tool" onClick="addInput('tools', 'Tool');"><br>
+                    <input type="button" class="btn form-group" value="Add Another Tool" onClick="addInput('tools[]');"><br>
                 </div>
                 <div class="panel-heading">
                     Description of meal
                 </div>
                 <div class="panel-body">
-                    <textarea class="form-control" placeholder="Description of Meal" name="description"></textarea><br>
+                    @Html.TextArea("Description", null, new{ @class = "form-control form-group", placeholder ="Description of Meal"})
 <!--                    <div class="backImgDesc">
                         Upload Photo of Meal
                     </div>
@@ -145,16 +146,16 @@
                     Nutrition Facts (Per Serving)
                 </div>
                 <div class="panel-body">
-                    <input type="number" class="form-control" placeholder="Calories" name="calories"><br>
-                    <input type="number" class="form-control" placeholder="Fat in grams" name="fat"><br>
-                    <input type="number" class="form-control" placeholder="Protein in grams" name="protein"><br>
-                    <input type="number" class="form-control" placeholder="Carbohydrates in grams" name="carbohydrates"><br>
+                    @Html.TextBox("Calories", null, new{ @class="form-control form-group", placeholder="Calories"})
+                    @Html.TextBox("Fat", null, new{ @class="form-control form-group", placeholder="Fat"})
+                    @Html.TextBox("Protein", null, new{ @class="form-control form-group", placeholder="Protein"})
+                    @Html.TextBox("Carbohydrates", null, new{ @class="form-control form-group", placeholder="Carbohydrates"})
                 </div>
                 <div class="panel-heading">
                     Author
                 </div>
                 <div class="panel-body">
-                    <input type="text" class="form-control" placeholder="Name of Author" name="author"><br>
+                    @Html.TextBox("Author", null, new{ @class="form-control form-group", placeholder="Name of Author"})
                 </div>
             </div> 
             <div class="text-center">

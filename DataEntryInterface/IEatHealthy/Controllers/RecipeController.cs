@@ -8,14 +8,14 @@ using IEatHealthy.Models;
 
 namespace IEatHealthy.Controllers
 {
-    public class IngredientsController : Controller
+    public class RecipeController : Controller
     {
         [HttpPost]
-        public IActionResult Ingredients(Ingredient ingredient)
+        public IActionResult Index(Recipe recipe)
         {
-            //TODO input validation if any and submit 'ingredient' to database
+            //TODO input validation if any and submit recipe to database 
             ModelState.Clear();
-            return View("~/Views/Home/Ingredients.cshtml");
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }
