@@ -13,7 +13,7 @@ namespace IEatHealthy
         private static MongoClient _instance = null;
 
         private static object syncLock = new object();
-        private const string CONNECT_STRING = "mongodb://IEatHealthy:j4fF4LoMPF1saw9w@ieathealthy-cluster0-shard-00-00-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-01-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-02-0q8tc.mongodb.net:27017/test?ssl=true&replicaSet=IEatHealthy-Cluster0-shard-0&authSource=admin";
+        private const string CONNECT_STRING = "mongodb://IEatHealthy:<PASSWORD>@ieathealthy-cluster0-shard-00-00-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-01-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-02-0q8tc.mongodb.net:27017/test?ssl=true&replicaSet=IEatHealthy-Cluster0-shard-0&authSource=admin";
 
         protected MongoClientFactory(){}
 
@@ -25,7 +25,13 @@ namespace IEatHealthy
                 {
                     _instance = new MongoClient(CONNECT_STRING);
                     var db = _instance.GetDatabase("food-data");
-                    bool isMongoLive = db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(10000);
+                    bool isMongoLive = false;
+                    try
+                    {
+                        isMongoLive = db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(10000);
+                    } catch(Exception e){
+                        Console.WriteLine(e);
+                    }
 
                     if (isMongoLive)
                     {
