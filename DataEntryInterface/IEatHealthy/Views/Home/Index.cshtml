@@ -15,10 +15,22 @@
             </container>
         </div>
 
-        <form method="post" asp-action="Index" asp-controller="Recipe" >
+        <form method="post" asp-action="Index" asp-controller="Recipe" enctype="multipart/form-data">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Name
+                </div>
+                <div class="panel-heading">
+                    Author
+                </div>
+                <div class="panel-body">
+                    @Html.TextBox("Author", null, new{ @class="form-control form-group", placeholder="Name of Author"})
+                </div>
+                <div class="panel-heading">
+                    Description of meal
+                </div>
+                <div class="panel-body">
+                    @Html.TextArea("Description", null, new{ @class = "form-control form-group", placeholder ="Description of Meal"}) 
                 </div>
                 <div class="panel-body">
                     @Html.TextBox("Name", null, new{ @class = "form-control form-group", placeholder ="Name of Recipe"})
@@ -124,6 +136,31 @@
                     <input type="button" class="btn form-group" value="Add Another Step" onClick="addStep('steps[]');"><br>
                 </div>
                 <div class="panel-heading">
+                    Nutrition Facts (Per Serving)
+                </div>
+                <div class="panel-body">
+                    @Html.TextBox("Calories", null, new{ @class="form-control form-group", placeholder="Calories"})
+                    @Html.TextBox("Protein", null, new{ @class="form-control form-group", placeholder="Protein"})
+                    @Html.TextBox("Fat", null, new{ @class="form-control form-group", placeholder="Fat"})
+                    @Html.TextBox("Carbohydrates", null, new{ @class="form-control form-group", placeholder="Carbohydrates"})
+                    @Html.TextBox("Fiber", null, new{ @class="form-control form-group", placeholder="Fiber"})
+                    @Html.TextBox("Sugar", null, new{ @class="form-control form-group", placeholder="Sugar"})
+                    @Html.TextBox("Calcium", null, new{ @class="form-control form-group", placeholder="Calcium"})
+                    @Html.TextBox("Iron", null, new{ @class="form-control form-group", placeholder="Iron"})
+                    @Html.TextBox("Potassium", null, new{ @class="form-control form-group", placeholder="Potassium"})
+                    @Html.TextBox("Sodium", null, new{ @class="form-control form-group", placeholder="Sodium"})
+                    @Html.TextBox("Vitamin_C", null, new{ @class="form-control form-group", placeholder="Vitamin C"})
+                    @Html.TextBox("Vit_A_IU", null, new{ @class="form-control form-group", placeholder="Vitamin A in IU"})
+                    @Html.TextBox("Vit_D_IU", null, new{ @class="form-control form-group", placeholder="Vitmain D in IU"})
+                    @Html.TextBox("Cholesterol", null, new{ @class="form-control form-group", placeholder="Cholesterol"})
+                </div>
+                <div class="panel-heading">
+                    Image 
+                </div>
+                <div class="panel-body">
+                        <input type="file" name="Image" />
+                </div>
+                 <div class="panel-heading">
                     Special Tools Needed
                 </div>
                 <div class="panel-body">
@@ -131,31 +168,6 @@
                         @Html.TextBox("ToolsNeeded", null, new{ @class="form-control form-group", placeholder="Tool"})
                     </div>
                     <input type="button" class="btn form-group" value="Add Another Tool" onClick="addInput('tools[]');"><br>
-                </div>
-                <div class="panel-heading">
-                    Description of meal
-                </div>
-                <div class="panel-body">
-                    @Html.TextArea("Description", null, new{ @class = "form-control form-group", placeholder ="Description of Meal"})
-<!--                    <div class="backImgDesc">
-                        Upload Photo of Meal
-                    </div>
-                    <br><input type="file" name="image"><br>     -->       
-                </div>
-                <div class="panel-heading">
-                    Nutrition Facts (Per Serving)
-                </div>
-                <div class="panel-body">
-                    @Html.TextBox("Calories", null, new{ @class="form-control form-group", placeholder="Calories"})
-                    @Html.TextBox("Fat", null, new{ @class="form-control form-group", placeholder="Fat"})
-                    @Html.TextBox("Protein", null, new{ @class="form-control form-group", placeholder="Protein"})
-                    @Html.TextBox("Carbohydrates", null, new{ @class="form-control form-group", placeholder="Carbohydrates"})
-                </div>
-                <div class="panel-heading">
-                    Author
-                </div>
-                <div class="panel-body">
-                    @Html.TextBox("Author", null, new{ @class="form-control form-group", placeholder="Name of Author"})
                 </div>
             </div> 
             <div class="text-center">

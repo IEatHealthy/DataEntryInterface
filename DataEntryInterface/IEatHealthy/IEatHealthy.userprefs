@@ -1,14 +1,6 @@
 ﻿<Properties StartupConfiguration="{A11137BB-D6E3-4FA5-ABEA-8F8C77184DA4}|Default">
   <MonoDevelop.Ide.ItemProperties.IEatHealthy PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
-    <Files>
-      <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Controllers/RecipeController.cs" Line="18" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="6" Column="22" />
-      <File FileName="Controllers/IngredientsController.cs" Line="16" Column="79" />
-      <File FileName="Models/Ingredient.cs" Line="41" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
