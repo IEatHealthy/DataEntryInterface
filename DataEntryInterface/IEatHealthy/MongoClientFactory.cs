@@ -25,7 +25,13 @@ namespace IEatHealthy
                 {
                     _instance = new MongoClient(CONNECT_STRING);
                     var db = _instance.GetDatabase("food-data");
-                    bool isMongoLive = db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(10000);
+                    bool isMongoLive = false;
+                    try
+                    {
+                        isMongoLive = db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(10000);
+                    } catch(Exception e){
+                        Console.WriteLine(e);
+                    }
 
                     if (isMongoLive)
                     {
