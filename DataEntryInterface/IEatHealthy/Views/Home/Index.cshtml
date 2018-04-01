@@ -1,4 +1,17 @@
 @model IEatHealthy.Models.Recipe;
+@using System;
+@using System.IO;
+@using Microsoft.AspNetCore.Mvc;
+@using IEatHealthy.Models;
+@using MongoDB.Bson;
+@using MongoDB.Driver;
+@using Microsoft.AspNetCore.Http;
+@using System.Web;
+
+@{
+    ViewData["Title"] = "Add a Recipe";
+}
+
 
 <html>
     <head>
@@ -15,11 +28,14 @@
             </container>
         </div>
 
-        <form method="post" asp-action="Index" asp-controller="Recipe" enctype="multipart/form-data">
+        <form method="post" asp-controller="Recipe" enctype="multipart/form-data">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Name
                 </div>
+                <div class="panel-body">
+                    @Html.TextBox("Name", null, new{ @class = "form-control form-group", placeholder ="Name of Recipe"})
+                </div> 
                 <div class="panel-heading">
                     Author
                 </div>
@@ -32,9 +48,7 @@
                 <div class="panel-body">
                     @Html.TextArea("Description", null, new{ @class = "form-control form-group", placeholder ="Description of Meal"}) 
                 </div>
-                <div class="panel-body">
-                    @Html.TextBox("Name", null, new{ @class = "form-control form-group", placeholder ="Name of Recipe"})
-                </div> 
+
                 <div class="panel-heading">
                     Difficulty
                  </div>
@@ -71,7 +85,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-4">
-                                    @Html.TextBox("Ingredients[0].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})
+                                    @Html.TextBox("Ingredients[0].IngredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
                                 </div>
                                 <div class="col-md-4">
                                     @Html.TextBox("Ingredients[0].Amount", null, new{ @class = "form-control", placeholder ="Amount"})
@@ -84,7 +98,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-4">
-                                    @Html.TextBox("Ingredients[1].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})
+                                    @Html.TextBox("Ingredients[1].IngredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
                                 </div>
                                 <div class="col-md-4">
                                     @Html.TextBox("Ingredients[1].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                    
@@ -97,7 +111,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-4">
-                                    @Html.TextBox("Ingredients[2].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})                                    
+                                    @Html.TextBox("Ingredients[2].IngredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})                                    
                                 </div>
                                 <div class="col-md-4">
                                     @Html.TextBox("Ingredients[2].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                    
@@ -110,7 +124,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-4">
-                                    @Html.TextBox("Ingredients[3].IngredientId", null, new{ @class = "form-control", placeholder ="Ingredient"})                                    
+                                    @Html.TextBox("Ingredients[3].IngredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})                                    
                                 </div>
                                 <div class="col-md-4">
                                     @Html.TextBox("Ingredients[3].Amount", null, new{ @class = "form-control", placeholder ="Amount"})                                   
@@ -122,18 +136,42 @@
                         </div>
                     </div>
                     <input type="button" class="btn form-group" value="Add Another Ingredient" onClick="addIngredient('ingredients[]');"><br>
+
+                    <input type="text" class="form-control form-group" placeholder="Enter ONLY one word of ingredient to search (case insensitive)" name="textToFind" style="width: 50%;">
+                    <div>
+                        <button value="Search" class="btn form-group" asp-action="SearchIngredientId" asp-controller="Recipe">Search</button>
+                    </div>
+                    @{
+                        List<Ingredient> IngredientsFound = ViewData["IngredientsFound"] as List<Ingredient>;
+
+                        for (int i = 0; i < 20 && i < IngredientsFound.Count; i++)
+                        {
+                            <div class="container-fluid">
+                                <div class="row form-group">
+                                    <div class="col-md-6">
+                                        @Html.TextBox("IngredientName", IngredientsFound[i].Shrt_Desc, new { @class="form-control form-group" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.TextBox("IngredientId", IngredientsFound[i].Id, new { @class="form-control form-group" })
+                                    </div>
+                                </div>
+                            </div> 
+                        }
+                    }
+   
                 </div>
                 <div class="panel-heading">
                     Steps
                 </div>
                 <div class="panel-body">
                     <div id="steps[]">
-                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 1"})
-                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 2"})
-                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 3"})
-                        @Html.TextArea("Steps", null, new{ @class = "form-control form-group", placeholder ="Step 4"})
+                        @Html.TextArea("Steps[0]", null, new{ @class = "form-control form-group", placeholder ="Step 1"})
+                        @Html.TextArea("Steps[1]", null, new{ @class = "form-control form-group", placeholder ="Step 2"})
+                        @Html.TextArea("Steps[2]", null, new{ @class = "form-control form-group", placeholder ="Step 3"})
+                        @Html.TextArea("Steps[3]", null, new{ @class = "form-control form-group", placeholder ="Step 4"})
                     </div>
                     <input type="button" class="btn form-group" value="Add Another Step" onClick="addStep('steps[]');"><br>
+
                 </div>
                 <div class="panel-heading">
                     Nutrition Facts (Per Serving)
@@ -158,7 +196,7 @@
                     Image 
                 </div>
                 <div class="panel-body">
-                        <input type="file" name="Image" />
+                    <input type="file" name="Image" />
                 </div>
                  <div class="panel-heading">
                     Special Tools Needed
@@ -171,7 +209,7 @@
                 </div>
             </div> 
             <div class="text-center">
-                    <input type="submit" class="btn btn-lg" value="Submit Form">
+                <button value="Submit Recipe" class="btn btn-lg" asp-action="Index" asp-controller="Recipe">Submit Recipe</button>
             </div> 
        </form>
     </body>

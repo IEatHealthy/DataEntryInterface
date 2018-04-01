@@ -1,6 +1,34 @@
 ﻿<Properties StartupConfiguration="{A11137BB-D6E3-4FA5-ABEA-8F8C77184DA4}|Default">
   <MonoDevelop.Ide.ItemProperties.IEatHealthy PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/RecipeModel.cs">
+    <Files>
+      <File FileName="Views/Home/Index.cshtml" Line="33" Column="32" />
+      <File FileName="Views/Home/Index2.cshtml" Line="1" Column="1" />
+      <File FileName="Controllers/IngredientsController.cs" Line="27" Column="39" />
+      <File FileName="Controllers/RecipeController.cs" Line="29" Column="33" />
+      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Models/Ingredient.cs" Line="7" Column="2" />
+      <File FileName="Models/RecipeModel.cs" Line="12" Column="17" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IEatHealthy" expanded="True">
+            <Node name="IEatHealthy" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="RecipeModel.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

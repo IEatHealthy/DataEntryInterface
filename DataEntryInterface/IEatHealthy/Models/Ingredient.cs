@@ -9,6 +9,8 @@ namespace IEatHealthy.Models
     {
         //Note, all properties are guaranteed to be
         //initialized before submitting to the database
+        [BsonId]
+        public ObjectId Id { get; set; }
         [BsonElement("NBD_No")]
         public string NBD_No { get; set; }
         [BsonElement("Shrt_Desc")]

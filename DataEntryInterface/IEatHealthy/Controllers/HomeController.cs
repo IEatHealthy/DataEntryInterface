@@ -13,21 +13,19 @@ namespace IEatHealthy.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewData["Title"] = "Add a Recipe";
+            ViewData["IngredientsFound"] = new List<Ingredient>();
             return View();
         }
 
         [HttpGet]
         public IActionResult Ingredients()
         {
-            ViewData["Title"] = "Add Ingredients";
             return View();
         }
 
         public IActionResult EditRecipes()
         {
 
-            ViewData["Title"] = "Edit Recipes";
             return View();
         }
 

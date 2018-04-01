@@ -1,7 +1,7 @@
 //Javascript file for recipe form
 
 
-var stepCounter = 5; //Number of steps to display.
+var stepCounter = 4; //Number of steps to display.
 var ingredientCounter = 4; //Number of ingredients.
 
 document.onkeypress = stopSubmit; //Checks for any key press event.
@@ -21,7 +21,7 @@ function addIngredient(divName)
     var newDiv = document.createElement('div');
     newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
                         <div class='col-md-4'>\
-                        <input class='form-control' id='Ingredients[" + ingredientCounter + "].IngredientId' name='Ingredients[" + ingredientCounter + "].IngredientId' placeholder='Ingredient' type='text' value='' />\
+                        <input class='form-control' id='Ingredients[" + ingredientCounter + "].IngredientId' name='Ingredients[" + ingredientCounter + "].IngredientId' placeholder='IngredientId' type='text' value='' />\
                         </div>\
                         <div class='col-md-4'>\
                         <input class='form-control' id='Ingredients[" + ingredientCounter + "].Amount' name='Ingredients[" + ingredientCounter + "]Amount' placeholder='Amount' type='text' value='' />\
@@ -37,7 +37,7 @@ function addIngredient(divName)
 function addStep(divName)
 {
     var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<textarea class='form-control form-group' id='Steps' name='Steps' placeholder='Step " + stepCounter + "'>";
+    newdiv.innerHTML = "<textarea class='form-control form-group' id='Steps[" + stepCounter + "]' name='Steps[" + stepCounter + "]' placeholder='Step " + (stepCounter + 1) + "'>";
 
     document.getElementById(divName).appendChild(newdiv);
     stepCounter++;

@@ -13,6 +13,7 @@ namespace IEatHealthy.Models
     };
 
     public class IngredientItem {
+        [BsonRepresentation(BsonType.ObjectId)]
         public string IngredientId { get; set; }
         public string UnitOfMeasure { get; set; }
         public float Amount { get; set; }
