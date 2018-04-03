@@ -7,73 +7,72 @@ namespace IEatHealthy.Models
 {
     public enum DifficultyType
     {
-        Easy = 1,
-        Intermediate = 2,
-        Hard = 3
+        easy = 1,
+        intermediate = 2,
+        hard = 3
     };
 
     public class IngredientItem {
         [BsonRepresentation(BsonType.ObjectId)]
-        public string IngredientId { get; set; }
-        public string UnitOfMeasure { get; set; }
-        public float Amount { get; set; }
+        public string ingredientId { get; set; }
+        public string unitOfMeasure { get; set; }
+        public float amount { get; set; }
     }
 
     public class Recipe
     {
-        [BsonElement("Name")]
-        public string Name { get; set; }
-        [BsonElement("Difficulty")]
-        public DifficultyType Difficulty { get; set; }
-        [BsonElement("Servings")]
-        public float Servings { get; set; }
-        [BsonElement("PrepTime")]
-        public float PrepTime { get; set; }
-        [BsonElement("CookTime")]
-        public float CookTime { get; set; }
-        [BsonElement("ReadyInTime")]
-        public float ReadyInTime { get; set; }
-        [BsonElement("Ingredients")]
-        public List<IngredientItem> Ingredients { get; set; }
-        [BsonElement("Steps")]
-        public List<string> Steps { get; set; }
-        [BsonElement("ToolsNeeded")]
-        public List<string> ToolsNeeded { get; set; }
-        [BsonElement("Description")]
-        public string Description { get; set; }
-        //TODO need to handle image data
-        [BsonElement("Author")]
-        public string Author { get; set; }
-        [BsonElement("Calories")]
-        public double Calories { get; set; }
-        [BsonElement("Protein")]
-        public double Protein { get; set; }
-        [BsonElement("Fat")]
-        public double Fat { get; set; }
-        [BsonElement("Carbohydrates")]
-        public double Carbohydrates { get; set; }
-        [BsonElement("Fiber")]
-        public double Fiber { get; set; }
-        [BsonElement("Sugar")]
-        public double Sugar { get; set; }
-        [BsonElement("Calcium")]
-        public double Calcium { get; set; }
-        [BsonElement("Iron ")]
-        public double Iron { get; set; }
-        [BsonElement("Potassium")]
-        public double Potassium { get; set; }
-        [BsonElement("Sodium")]
-        public double Sodium { get; set; }
-        [BsonElement("Vitamin_C ")]
-        public double Vitamin_C { get; set; }
-        [BsonElement("Vit_A_IU")]
-        public double Vit_A_IU { get; set; }
-        [BsonElement("Vit_D_IU")]
-        public double Vit_D_IU { get; set; }
-        [BsonElement("Cholesterol")]
-        public double Cholesterol { get; set; }
-        [BsonElement("FoodImage")]
-        public BsonBinaryData FoodImage { get; set; }
+        [BsonElement("name")]
+        public string name { get; set; }
+        [BsonElement("difficulty")]
+        public DifficultyType difficulty { get; set; }
+        [BsonElement("servings")]
+        public float servings { get; set; }
+        [BsonElement("prepTime")]
+        public float prepTime { get; set; }
+        [BsonElement("cookTime")]
+        public float cookTime { get; set; }
+        [BsonElement("readyInTime")]
+        public float readyInTime { get; set; }
+        [BsonElement("ingredients")]
+        public List<IngredientItem> ingredients { get; set; }
+        [BsonElement("steps")]
+        public List<string> steps { get; set; }
+        [BsonElement("toolsNeeded")]
+        public List<string> toolsNeeded { get; set; }
+        [BsonElement("description")]
+        public string description { get; set; }
+        [BsonElement("author")]
+        public string author { get; set; }
+        [BsonElement("calories")]
+        public double calories { get; set; }
+        [BsonElement("protein")]
+        public double protein { get; set; }
+        [BsonElement("fat")]
+        public double fat { get; set; }
+        [BsonElement("carbohydrate")]
+        public double carbohydrate { get; set; }
+        [BsonElement("fiber")]
+        public double fiber { get; set; }
+        [BsonElement("sugar")]
+        public double sugar { get; set; }
+        [BsonElement("calcium")]
+        public double calcium { get; set; }
+        [BsonElement("iron ")]
+        public double iron { get; set; }
+        [BsonElement("potassium")]
+        public double potassium { get; set; }
+        [BsonElement("sodium")]
+        public double sodium { get; set; }
+        [BsonElement("vitaminC ")]
+        public double vitaminC { get; set; }
+        [BsonElement("vitAiu")]
+        public double vitAiu { get; set; }
+        [BsonElement("vitDiu")]
+        public double vitDiu { get; set; }
+        [BsonElement("cholestrol")]
+        public double cholestrol { get; set; }
+        [BsonElement("foodImage")]
+        public BsonBinaryData foodImage { get; set; }
 
         public Recipe() {}
     }

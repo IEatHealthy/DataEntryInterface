@@ -28,6 +28,7 @@ namespace IEatHealthy.Controllers
             //Note: will give error if no image is provided.
             Stream imageData = image.OpenReadStream();
             imageData.Position = 0;
+
             //Buffer for the image data.
             byte[] buffer = new byte[imageData.Length];
 
@@ -38,21 +39,19 @@ namespace IEatHealthy.Controllers
             }
 
             //Image is stored as BsonBinaryData in database. 
-            recipe.FoodImage = new BsonBinaryData(buffer);
+            recipe.foodImage = new BsonBinaryData(buffer);
 
-            string returnstring = "";
-
-            for (int i = 0; i < recipe.Steps.Count; i++)
+            //Removes empty tool when no tools are entered. 
+            if (recipe.toolsNeeded[0] == null)
             {
-                returnstring += recipe.Steps[i];
+                recipe.toolsNeeded.RemoveAt(0);
             }
-
             //Inserts the recipe into the collection.
             collection.InsertOne(recipe);
 
             //Clears the model so that all previous input fields are cleared. 
             ModelState.Clear();
-            ViewData["IngredientsFound"] = new List<Ingredient>();
+            ViewData["ingredientsFound"] = new List<Ingredient>();
             return View("~/Views/Home/Index.cshtml");
         }
 
@@ -62,10 +61,11 @@ namespace IEatHealthy.Controllers
             //Gets the ingredients collection.
             var collection = db.GetCollection<Ingredient>("ingredients");
 
-            var filter = Builders<Ingredient>.Filter.Regex("Shrt_Desc", new BsonRegularExpression(textToFind, "i"));
+            var filter = Builders<Ingredient>.Filter.Regex("shrtDesc", new BsonRegularExpression(textToFind, "i"));
             var listOfIngredients = collection.Find(filter).ToList();
 
-            ViewData["IngredientsFound"] = listOfIngredients;
+            //ViewData stores the ingredients returned to pass data from controller to view. 
+            ViewData["ingredientsFound"] = listOfIngredients;
 
             return View("~/Views/Home/Index.cshtml");
         }

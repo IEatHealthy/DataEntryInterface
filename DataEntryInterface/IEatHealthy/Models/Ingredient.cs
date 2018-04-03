@@ -10,53 +10,53 @@ namespace IEatHealthy.Models
         //Note, all properties are guaranteed to be
         //initialized before submitting to the database
         [BsonId]
-        public ObjectId Id { get; set; }
-        [BsonElement("NBD_No")]
-        public string NBD_No { get; set; }
-        [BsonElement("Shrt_Desc")]
-        public string Shrt_Desc { get; set; }
-        [BsonElement("GmWt1")]
-        public string GmWt1 { get; set; }
-        [BsonElement("GmWt_Desc1")]
-        public string GmWt_Desc1 { get; set; }
-        [BsonElement("GmWt2")]
-        public string GmWt2 { get; set;  }
-        [BsonElement("GmWt_Desc2")]
-        public string GmWt_Desc2 { get; set; }
-        [BsonElement("Calories")]
-        public double Calories { get; set; }
-        [BsonElement("Protein")]
-        public double Protein { get; set; }
-        [BsonElement("Fat")]
-        public double Fat { get; set; }
-        [BsonElement("Carbohydate")]
-        public double Carbohydate { get; set; }
-        [BsonElement("Fiber")]
-        public double Fiber { get; set; }
-        [BsonElement("Sugar")]
-        public double Sugar { get; set; }
-        [BsonElement("Calcium")]
-        public double Calcium { get; set; }
-        [BsonElement("Iron")]
-        public double Iron { get; set; }
-        [BsonElement("Potassium")]
-        public double Potassium { get; set; }
-        [BsonElement("Sodium")]
-        public double Sodium { get; set; }
-        [BsonElement("Vitamin_C")]
-        public double Vitamin_C { get; set; }
-        [BsonElement("Vit_A_IU")]
-        public double Vit_A_IU { get; set; }
-        [BsonElement("Vit_D_IU")]
-        public double Vit_D_IU { get; set; }
-        [BsonElement("Cholestrol")]
-        public double Cholestrol { get; set; }
+        public ObjectId _id { get; set; }
+        [BsonElement("nbdNo")]
+        public string nbdNo{ get; set; }
+        [BsonElement("shrtDesc")]
+        public string shrtDesc { get; set; }
+        [BsonElement("gmWt1")]
+        public string gmWt1 { get; set; }
+        [BsonElement("gmWtDesc1")]
+        public string gmWtDesc1 { get; set; }
+        [BsonElement("gmWt2")]
+        public string gmWt2 { get; set;  }
+        [BsonElement("gmWtDesc2")]
+        public string gmWtDesc2 { get; set; }
+        [BsonElement("calories")]
+        public double calories { get; set; }
+        [BsonElement("protein")]
+        public double protein { get; set; }
+        [BsonElement("fat")]
+        public double fat { get; set; }
+        [BsonElement("carbohydate")]
+        public double carbohydate { get; set; }
+        [BsonElement("fiber")]
+        public double fiber { get; set; }
+        [BsonElement("sugar")]
+        public double sugar { get; set; }
+        [BsonElement("calcium")]
+        public double calcium { get; set; }
+        [BsonElement("iron")]
+        public double iron { get; set; }
+        [BsonElement("potassium")]
+        public double potassium { get; set; }
+        [BsonElement("sodium")]
+        public double sodium { get; set; }
+        [BsonElement("vitaminC")]
+        public double vitaminC { get; set; }
+        [BsonElement("vitAiu")]
+        public double vitAiu { get; set; }
+        [BsonElement("vitDiu")]
+        public double vitDiu { get; set; }
+        [BsonElement("cholestrol")]
+        public double cholestrol { get; set; }
         public Ingredient(){}
 
         public void print()
         {
-            Console.WriteLine("Ingredient No.: " + NBD_No);
-            Console.WriteLine("Description: " + Shrt_Desc);
+            Console.WriteLine("Ingredient No.: " + nbdNo);
+            Console.WriteLine("Description: " + shrtDesc);
         }
     }
 }
