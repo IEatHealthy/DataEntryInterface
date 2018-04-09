@@ -29897,11 +29897,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Jimenez103/Documents/GitHub/DataEntryInterface/DataEntryInterface/IEatHealthy/IEatHealthy.csproj",
+      "projectUniqueName": "/Users/Jimenez103/Documents/DataEntryInterface/DataEntryInterface/IEatHealthy/IEatHealthy.csproj",
       "projectName": "IEatHealthy",
-      "projectPath": "/Users/Jimenez103/Documents/GitHub/DataEntryInterface/DataEntryInterface/IEatHealthy/IEatHealthy.csproj",
+      "projectPath": "/Users/Jimenez103/Documents/DataEntryInterface/DataEntryInterface/IEatHealthy/IEatHealthy.csproj",
       "packagesPath": "/Users/Jimenez103/.nuget/packages/",
-      "outputPath": "/Users/Jimenez103/Documents/GitHub/DataEntryInterface/DataEntryInterface/IEatHealthy/obj",
+      "outputPath": "/Users/Jimenez103/Documents/DataEntryInterface/DataEntryInterface/IEatHealthy/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
