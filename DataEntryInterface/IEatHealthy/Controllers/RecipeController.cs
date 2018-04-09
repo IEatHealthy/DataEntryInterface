@@ -41,11 +41,42 @@ namespace IEatHealthy.Controllers
             //Image is stored as BsonBinaryData in database. 
             recipe.foodImage = new BsonBinaryData(buffer);
 
-            //Removes empty tool when no tools are entered. 
-            if (recipe.toolsNeeded[0] == null)
+            //Removes any null submissions.
+            if (recipe.ingredients != null)
             {
-                recipe.toolsNeeded.RemoveAt(0);
+                for (int i = recipe.ingredients.Count - 1; i >= 0; i--)
+                {
+                    if (recipe.ingredients[i].ingredientId == null)
+                    {
+                        recipe.ingredients.RemoveAt(i);
+                    }
+                }
             }
+
+            //Removes any null submissions.
+            if (recipe.steps != null)
+            {
+                for (int i = recipe.steps.Count - 1; i >= 0; i--)
+                {
+                    if (recipe.steps[i] == null)
+                    {
+                        recipe.steps.RemoveAt(i);
+                    }
+                }
+            }
+
+            //Removes any null submissions.
+            if (recipe.toolsNeeded != null)
+            {
+                for (int i = recipe.toolsNeeded.Count - 1; i >= 0; i--)
+                {
+                    if (recipe.toolsNeeded[i] == null)
+                    {
+                        recipe.toolsNeeded.RemoveAt(i);
+                    }
+                }
+            }
+
             //Inserts the recipe into the collection.
             collection.InsertOne(recipe);
 
