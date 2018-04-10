@@ -13,7 +13,7 @@ namespace IEatHealthy
         private static MongoClient _instance = null;
 
         private static object syncLock = new object();
-        private const string CONNECT_STRING = "mongodb://IEatHealthy:<PASSWORD>@ieathealthy-cluster0-shard-00-00-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-01-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-02-0q8tc.mongodb.net:27017/test?ssl=true&replicaSet=IEatHealthy-Cluster0-shard-0&authSource=admin";
+        private const string CONNECT_STRING = "mongodb://IEatHealthy:srsnEu1KzpBKpSOt@ieathealthy-cluster0-shard-00-00-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-01-0q8tc.mongodb.net:27017,ieathealthy-cluster0-shard-00-02-0q8tc.mongodb.net:27017/test?ssl=true&replicaSet=IEatHealthy-Cluster0-shard-0&authSource=admin";
 
         protected MongoClientFactory(){}
 

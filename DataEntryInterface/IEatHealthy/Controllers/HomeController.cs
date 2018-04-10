@@ -14,6 +14,8 @@ namespace IEatHealthy.Controllers
         public IActionResult Index()
         {
             ViewData["IngredientsFound"] = new List<Ingredient>();
+            ViewData["rec"] = new Recipe();
+
             return View();
         }
 

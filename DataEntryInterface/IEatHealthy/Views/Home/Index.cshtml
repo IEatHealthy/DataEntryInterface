@@ -29,6 +29,8 @@
         </div>
 
         <form method="post" asp-controller="Recipe" enctype="multipart/form-data">
+
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Name
@@ -108,9 +110,39 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <input type="button" class="btn form-group" value="Add Another Ingredient" onClick="addIngredient('ingredients[]');"><br>
 
+                        @{
+                            Recipe rec = ViewData["rec"] as Recipe;
+
+                            for (int i = 2; rec.ingredients != null && i < rec.ingredients.Count; i++)
+                            {
+                                <div class="container-fluid"> 
+                                    <div class="row form-group"> 
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].ingredientId" name="ingredients[@i].ingredientId" value="@rec.ingredients[i].ingredientId"  />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].amount" name="ingredients[@i].amount" value="@rec.ingredients[i].amount"/>
+                                    
+                                        </div> 
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].unitOfMeasure" name="ingredients[@i].unitOfMeasure" value="@rec.ingredients[i].unitOfMeasure"  />
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    @{ 
+                        int ingredientCount = 2;
+                        if (rec.ingredients != null)
+                        {
+                            ingredientCount = rec.ingredients.Count;
+                        }
+                        <input type="button" class="btn form-group" value="Add Another Ingredient" onClick="addIngredient('ingredients[]', @ingredientCount);"><br>
+                    }
                     <input type="text" class="form-control form-group" placeholder="Enter ONLY one word of ingredient to search (case insensitive)" name="textToFind" style="width: 50%;">
                     <div>
                         <button value="Search" class="btn form-group" asp-action="SearchIngredientId" asp-controller="Recipe">Search</button>
@@ -142,8 +174,23 @@
                     <div id="steps[]">
                         @Html.TextArea("steps[0]", null, new{ @class = "form-control form-group", placeholder ="Step 1"})
                         @Html.TextArea("steps[1]", null, new{ @class = "form-control form-group", placeholder ="Step 2"})
+                        @{
+                            for (int i = 2; rec.steps != null && i < rec.steps.Count; i++)
+                            {
+                                <textarea class="form-control form-group" placeholder="Step @i" id="steps[@i]" name="steps[@i]">@rec.steps[i]</textarea>
+                            }
+                        }
                     </div>
-                    <input type="button" class="btn form-group" value="Add Another Step" onClick="addStep('steps[]');"><br>
+
+                @{
+                    int stepsCount = 2;
+                    if (rec.steps != null)
+                    {
+                        stepsCount = rec.steps.Count;
+                    }
+
+                    <input type="button" class="btn form-group" value="Add Another Step" onClick="addStep('steps[]', @stepsCount);"><br>
+                }
 
                 </div>
                 <div class="panel-heading">
@@ -176,9 +223,25 @@
                 </div>
                 <div class="panel-body">
                     <div id="tools[]">
-                        @Html.TextBox("toolsNeeded", null, new{ @class="form-control form-group", placeholder="Tool"})
+                        @Html.TextBox("toolsNeeded[0]", null, new{ @class="form-control form-group", placeholder="Tool"})
+
+                        @{
+                            for (int i = 1; rec.toolsNeeded != null && i < rec.toolsNeeded.Count; i++)
+                            {
+                                <input type="text" class="form-control form-group" placeholder="Tool @i" id="toolsNeeded[@i]" name="toolsNeeded[@i]" value="@rec.toolsNeeded[i]" />
+                            }
+                        }
                     </div>
-                    <input type="button" class="btn form-group" value="Add Another Tool" onClick="addInput('tools[]');"><br>
+
+                     @{
+                        int toolsCount = 2;
+                        if (rec.toolsNeeded != null)
+                        {
+                            toolsCount = rec.toolsNeeded.Count;
+                        }
+
+                        <input type="button" class="btn form-group" value="Add Another Tool" onClick="addInput('tools[]', @toolsCount);"><br>
+                    }
                 </div>
             </div> 
             <div class="text-center">

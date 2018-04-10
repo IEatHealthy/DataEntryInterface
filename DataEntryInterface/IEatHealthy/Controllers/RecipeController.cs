@@ -10,7 +10,6 @@ using System.Collections.Generic;
 
 
 
-
 namespace IEatHealthy.Controllers
 {
     public class RecipeController : Controller
@@ -82,7 +81,9 @@ namespace IEatHealthy.Controllers
 
             //Clears the model so that all previous input fields are cleared. 
             ModelState.Clear();
+
             ViewData["ingredientsFound"] = new List<Ingredient>();
+            ViewData["rec"] = new Recipe();
             return View("~/Views/Home/Index.cshtml");
         }
 
@@ -97,6 +98,8 @@ namespace IEatHealthy.Controllers
 
             //ViewData stores the ingredients returned to pass data from controller to view. 
             ViewData["ingredientsFound"] = listOfIngredients;
+            ViewData["rec"] = recipe;
+
 
             return View("~/Views/Home/Index.cshtml");
         }
