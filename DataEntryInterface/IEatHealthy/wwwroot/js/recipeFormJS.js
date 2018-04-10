@@ -26,13 +26,16 @@ function addIngredient(divName, ingredientCounter)
 
     var newDiv = document.createElement('div');
     newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
-                        <div class='col-md-4'>\
+                        <div class='col-md-3'>\
+                        <input type='text' name='ingName' class='form-control' placeholder='Name (for reference only)'/>\
+                        </div>\
+                        <div class='col-md-3'>\
                         <input class='form-control' id='ingredients[" + ingredientCounter + "].ingredientId' name='ingredients[" + ingredientCounter + "].ingredientId' placeholder='IngredientId' type='text' value='' />\
                         </div>\
-                        <div class='col-md-4'>\
+                        <div class='col-md-3'>\
                         <input class='form-control' id='ingredients[" + ingredientCounter + "].amount' name='ingredients[" + ingredientCounter + "].amount' placeholder='Amount' type='text' value='' />\
                         </div>\
-                        <div class='col-md-4'>\
+                        <div class='col-md-3'>\
                         <input class='form-control' id='ingredients[" + ingredientCounter + "].unitOfMeasure' name='ingredients[" + ingredientCounter + "].unitOfMeasure' placeholder='Unit of Measure' type='text' value='' />\
                         </div>";
     document.getElementById(divName).appendChild(newDiv);

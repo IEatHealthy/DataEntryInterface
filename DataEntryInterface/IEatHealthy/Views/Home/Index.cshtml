@@ -86,26 +86,32 @@
                     <div id="ingredients[]">
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
+                                    <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)"/>  
+                                </div>
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[0].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[0].amount", null, new{ @class = "form-control", placeholder ="Amount"})
                                 </div> 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[0].unitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})
                                 </div>
                             </div>
                         </div>
                         <div class="container-fluid"> 
-                            <div class="row form-group"> 
-                                <div class="col-md-4">
+                            <div class="row form-group">
+                                <div class="col-md-3">
+                                    <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)"/>  
+                                </div>
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[1].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[1].amount", null, new{ @class = "form-control", placeholder ="Amount"})                                    
                                 </div> 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     @Html.TextBox("ingredients[1].unitOfMeasure", null, new{ @class = "form-control", placeholder ="Unit of Measure"})                                    
                                 </div>
                             </div>
@@ -117,15 +123,18 @@
                             for (int i = 2; rec.ingredients != null && i < rec.ingredients.Count; i++)
                             {
                                 <div class="container-fluid"> 
-                                    <div class="row form-group"> 
-                                        <div class="col-md-4">
+                                    <div class="row form-group">
+                                        <div class="col-md-3">
+                                            <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)" />  
+                                        </div>
+                                        <div class="col-md-3">
                                             <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].ingredientId" name="ingredients[@i].ingredientId" value="@rec.ingredients[i].ingredientId"  />
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].amount" name="ingredients[@i].amount" value="@rec.ingredients[i].amount"/>
                                     
                                         </div> 
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].unitOfMeasure" name="ingredients[@i].unitOfMeasure" value="@rec.ingredients[i].unitOfMeasure"  />
                                     
                                         </div>
