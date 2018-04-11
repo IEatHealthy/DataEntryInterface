@@ -84,11 +84,13 @@ namespace IEatHealthy.Controllers
 
             ViewData["ingredientsFound"] = new List<Ingredient>();
             ViewData["rec"] = new Recipe();
+            ViewData["ingNames"] = new List<String> { "", "" };
+
             return View("~/Views/Home/Index.cshtml");
         }
 
         [HttpPost]
-        public IActionResult SearchIngredientId(Recipe recipe, String textToFind)
+        public IActionResult SearchIngredientId(Recipe recipe, String textToFind, List<String> ingredientNames)
         {
             //Gets the ingredients collection.
             var collection = db.GetCollection<Ingredient>("ingredients");
@@ -99,6 +101,7 @@ namespace IEatHealthy.Controllers
             //ViewData stores the ingredients returned to pass data from controller to view. 
             ViewData["ingredientsFound"] = listOfIngredients;
             ViewData["rec"] = recipe;
+            ViewData["ingNames"] = ingredientNames;
 
 
             return View("~/Views/Home/Index.cshtml");

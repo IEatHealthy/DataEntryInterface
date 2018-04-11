@@ -82,12 +82,15 @@
                 <div class="panel-heading">
                     Ingredients
                 </div>
+
+                @{ List<String> ingNames = ViewData["ingNames"] as List<String>; }
+
                <div class="panel-body">
                     <div id="ingredients[]">
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-3">
-                                    <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)"/>  
+                                    <input type="text" name="ingredientNames[0]" class="form-control" value="@ingNames[0]" />  
                                 </div>
                                 <div class="col-md-3">
                                     @Html.TextBox("ingredients[0].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
@@ -103,7 +106,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group">
                                 <div class="col-md-3">
-                                    <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)"/>  
+                                    <input type="text" name="ingredientNames[1]" class="form-control" value="@ingNames[1]"/>  
                                 </div>
                                 <div class="col-md-3">
                                     @Html.TextBox("ingredients[1].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
@@ -125,7 +128,7 @@
                                 <div class="container-fluid"> 
                                     <div class="row form-group">
                                         <div class="col-md-3">
-                                            <input type="text" name="ingName" class="form-control" placeholder="Name (for reference only)" />  
+                                            <input type="text" name="ingredientNames[@i]" class="form-control" value="@ingNames[i]"/>  
                                         </div>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].ingredientId" name="ingredients[@i].ingredientId" value="@rec.ingredients[i].ingredientId"  />

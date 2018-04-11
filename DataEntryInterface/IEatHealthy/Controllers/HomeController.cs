@@ -15,6 +15,8 @@ namespace IEatHealthy.Controllers
         {
             ViewData["IngredientsFound"] = new List<Ingredient>();
             ViewData["rec"] = new Recipe();
+            ViewData["ingNames"] = new List<String> { "", "" };
+
 
             return View();
         }

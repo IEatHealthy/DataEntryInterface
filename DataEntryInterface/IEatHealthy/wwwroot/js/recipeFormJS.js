@@ -27,7 +27,7 @@ function addIngredient(divName, ingredientCounter)
     var newDiv = document.createElement('div');
     newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
                         <div class='col-md-3'>\
-                        <input type='text' name='ingName' class='form-control' placeholder='Name (for reference only)'/>\
+                        <input type='text' name='ingredientNames[" + ingredientCounter + "]' class='form-control' value=' '/>\
                         </div>\
                         <div class='col-md-3'>\
                         <input class='form-control' id='ingredients[" + ingredientCounter + "].ingredientId' name='ingredients[" + ingredientCounter + "].ingredientId' placeholder='IngredientId' type='text' value='' />\
