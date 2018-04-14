@@ -45,7 +45,7 @@ namespace IEatHealthy.Controllers
             {
                 for (int i = recipe.ingredients.Count - 1; i >= 0; i--)
                 {
-                    if (recipe.ingredients[i].ingredientId == null)
+                    if (recipe.ingredients[i].desc == null)
                     {
                         recipe.ingredients.RemoveAt(i);
                     }
@@ -84,7 +84,6 @@ namespace IEatHealthy.Controllers
 
             ViewData["ingredientsFound"] = new List<Ingredient>();
             ViewData["rec"] = new Recipe();
-            ViewData["ingNames"] = new List<String> { "", "" };
 
             return View("~/Views/Home/Index.cshtml");
         }
@@ -93,6 +92,15 @@ namespace IEatHealthy.Controllers
         public IActionResult SearchIngredientId(Recipe recipe, String textToFind, List<String> ingredientNames)
         {
             //Gets the ingredients collection.
+
+            //Keeps from giving error if they try press search button with empty search field. 
+            if (textToFind == null)
+            {
+                ViewData["ingredientsFound"] = new List<Ingredient>();
+                ViewData["rec"] = recipe;
+                return View("~/Views/Home/Index.cshtml");
+            }
+
             var collection = db.GetCollection<Ingredient>("ingredients");
 
             var filter = Builders<Ingredient>.Filter.Regex("shrtDesc", new BsonRegularExpression(textToFind, "i"));
@@ -101,9 +109,7 @@ namespace IEatHealthy.Controllers
             //ViewData stores the ingredients returned to pass data from controller to view. 
             ViewData["ingredientsFound"] = listOfIngredients;
             ViewData["rec"] = recipe;
-            ViewData["ingNames"] = ingredientNames;
-
-
+         
             return View("~/Views/Home/Index.cshtml");
         }
     }

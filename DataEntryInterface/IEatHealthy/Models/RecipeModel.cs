@@ -13,6 +13,7 @@ namespace IEatHealthy.Models
     };
 
     public class IngredientItem {
+        public string desc { get; set; }
         [BsonRepresentation(BsonType.ObjectId)]
         public string ingredientId { get; set; }
         public string unitOfMeasure { get; set; }
@@ -21,6 +22,8 @@ namespace IEatHealthy.Models
 
     public class Recipe
     {
+        [BsonId]
+        public ObjectId _id { get; set; }
         [BsonElement("name")]
         public string name { get; set; }
         [BsonElement("difficulty")]

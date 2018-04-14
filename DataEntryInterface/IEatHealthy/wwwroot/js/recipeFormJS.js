@@ -27,7 +27,7 @@ function addIngredient(divName, ingredientCounter)
     var newDiv = document.createElement('div');
     newDiv.innerHTML = "<div class='container-fluid'><div class='row form-group'>\
                         <div class='col-md-3'>\
-                        <input type='text' name='ingredientNames[" + ingredientCounter + "]' class='form-control' value=' '/>\
+                        <input class='form-control' id='ingredients[" + ingredientCounter + "].desc' name='ingredients[" + ingredientCounter + "].desc' placeholder='Ingredient Description' type='text' value='' />\
                         </div>\
                         <div class='col-md-3'>\
                         <input class='form-control' id='ingredients[" + ingredientCounter + "].ingredientId' name='ingredients[" + ingredientCounter + "].ingredientId' placeholder='IngredientId' type='text' value='' />\
@@ -74,7 +74,7 @@ function addInput(divName, toolCounter)
     }
 
     var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<input type='text' class='form-control form-group' placeholder='Tool' id='toolsNeeded[" + toolCounter + "]' name='toolsNeeded[" + toolCounter + "]' >";
+    newdiv.innerHTML = "<input type='text' class='form-control form-group' placeholder='Tool' id='toolsNeeded[" + toolCounter + "]' name='toolsNeeded[" + toolCounter + "]'>";
     document.getElementById(divName).appendChild(newdiv);
 
     if(oldToolCounter == 0)

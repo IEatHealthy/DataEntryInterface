@@ -90,7 +90,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group"> 
                                 <div class="col-md-3">
-                                    <input type="text" name="ingredientNames[0]" class="form-control" value="@ingNames[0]" />  
+                                    @Html.TextBox("ingredients[0].desc", null, new{ @class = "form-control", placeholder ="Ingredient Description"})
                                 </div>
                                 <div class="col-md-3">
                                     @Html.TextBox("ingredients[0].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
@@ -106,7 +106,7 @@
                         <div class="container-fluid"> 
                             <div class="row form-group">
                                 <div class="col-md-3">
-                                    <input type="text" name="ingredientNames[1]" class="form-control" value="@ingNames[1]"/>  
+                                    @Html.TextBox("ingredients[1].desc", null, new{ @class = "form-control", placeholder ="Ingredient Description"})
                                 </div>
                                 <div class="col-md-3">
                                     @Html.TextBox("ingredients[1].ingredientId", null, new{ @class = "form-control", placeholder ="IngredientId"})
@@ -128,18 +128,16 @@
                                 <div class="container-fluid"> 
                                     <div class="row form-group">
                                         <div class="col-md-3">
-                                            <input type="text" name="ingredientNames[@i]" class="form-control" value="@ingNames[i]"/>  
+                                            <input type="text" class="form-control" placeholder="Ingredient Description" id="ingredients[@i].desc" name="ingredients[@i].desc"  value="@rec.ingredients[@i].desc"/>  
                                         </div>
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].ingredientId" name="ingredients[@i].ingredientId" value="@rec.ingredients[i].ingredientId"  />
+                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].ingredientId" name="ingredients[@i].ingredientId" value="@rec.ingredients[i].ingredientId" />
                                         </div>
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].amount" name="ingredients[@i].amount" value="@rec.ingredients[i].amount"/>
-                                    
+                                            <input type="text" class="form-control" placeholder="Amount" id="ingredients[@i].amount" name="ingredients[@i].amount" value="@rec.ingredients[i].amount"/>
                                         </div> 
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" placeholder="IngredientId" id="ingredients[@i].unitOfMeasure" name="ingredients[@i].unitOfMeasure" value="@rec.ingredients[i].unitOfMeasure"  />
-                                    
+                                            <input type="text" class="form-control" placeholder="Unit of Measure" id="ingredients[@i].unitOfMeasure" name="ingredients[@i].unitOfMeasure" value="@rec.ingredients[i].unitOfMeasure"  />
                                         </div>
                                     </div>
                                 </div>
@@ -209,20 +207,20 @@
                     Nutrition Facts (Per Serving)
                 </div>
                 <div class="panel-body">
-                    @Html.TextBox("calories", null, new{ @class="form-control form-group", placeholder="Calories"})
-                    @Html.TextBox("protein", null, new{ @class="form-control form-group", placeholder="Protein"})
-                    @Html.TextBox("fat", null, new{ @class="form-control form-group", placeholder="Fat"})
-                    @Html.TextBox("carbohydrate", null, new{ @class="form-control form-group", placeholder="Carbohydrates"})
-                    @Html.TextBox("fiber", null, new{ @class="form-control form-group", placeholder="Fiber"})
-                    @Html.TextBox("sugar", null, new{ @class="form-control form-group", placeholder="Sugar"})
-                    @Html.TextBox("calcium", null, new{ @class="form-control form-group", placeholder="Calcium"})
-                    @Html.TextBox("iron", null, new{ @class="form-control form-group", placeholder="Iron"})
-                    @Html.TextBox("potassium", null, new{ @class="form-control form-group", placeholder="Potassium"})
-                    @Html.TextBox("sodium", null, new{ @class="form-control form-group", placeholder="Sodium"})
-                    @Html.TextBox("vitaminC", null, new{ @class="form-control form-group", placeholder="Vitamin C"})
+                    @Html.TextBox("calories", null, new{ @class="form-control form-group", placeholder="Calories in Grams"})
+                    @Html.TextBox("fat", null, new{ @class="form-control form-group", placeholder="Fat in Grams"})
+                    @Html.TextBox("cholestrol", null, new{ @class="form-control form-group", placeholder="Cholesterol in Grams"})
+                    @Html.TextBox("sodium", null, new{ @class="form-control form-group", placeholder="Sodium in Grams"})
+                    @Html.TextBox("potassium", null, new{ @class="form-control form-group", placeholder="Potassium in Grams"})
+                    @Html.TextBox("carbohydrate", null, new{ @class="form-control form-group", placeholder="Carbohydrates in Grams"})
+                    @Html.TextBox("fiber", null, new{ @class="form-control form-group", placeholder="Fiber in Grams"})
+                    @Html.TextBox("protein", null, new{ @class="form-control form-group", placeholder="Protein in Grams"})
+                    @Html.TextBox("sugar", null, new{ @class="form-control form-group", placeholder="Sugar in Grams"})
                     @Html.TextBox("vitAiu", null, new{ @class="form-control form-group", placeholder="Vitamin A in IU"})
                     @Html.TextBox("vitDiu", null, new{ @class="form-control form-group", placeholder="Vitmain D in IU"})
-                    @Html.TextBox("cholestrol", null, new{ @class="form-control form-group", placeholder="Cholesterol"})
+                    @Html.TextBox("vitaminC", null, new{ @class="form-control form-group", placeholder="Vitamin C in Grams"})
+                    @Html.TextBox("calcium", null, new{ @class="form-control form-group", placeholder="Calcium in Grams"})
+                    @Html.TextBox("iron", null, new{ @class="form-control form-group", placeholder="Iron in Grams"})
                 </div>
                 <div class="panel-heading">
                     Image 
@@ -240,13 +238,13 @@
                         @{
                             for (int i = 1; rec.toolsNeeded != null && i < rec.toolsNeeded.Count; i++)
                             {
-                                <input type="text" class="form-control form-group" placeholder="Tool @i" id="toolsNeeded[@i]" name="toolsNeeded[@i]" value="@rec.toolsNeeded[i]" />
+                                <input type="text" class="form-control form-group" placeholder="Tool" id="toolsNeeded[@i]" name="toolsNeeded[@i]" value="@rec.toolsNeeded[i]" />
                             }
                         }
                     </div>
 
                      @{
-                        int toolsCount = 2;
+                        int toolsCount = 1;
                         if (rec.toolsNeeded != null)
                         {
                             toolsCount = rec.toolsNeeded.Count;
