@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{EDE35B57-3C10-4198-9706-6420FFD62BEA}|Default">
   <MonoDevelop.Ide.ItemProperties.IEatHealthy PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IEatHealthy/MongoClientFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IEatHealthy/Views/Home/Index.cshtml">
     <Files>
       <File FileName="IEatHealthy/Controllers/RecipeController.cs" Line="70" Column="53" />
-      <File FileName="IEatHealthy/Views/Home/Index.cshtml" Line="240" Column="30" />
-      <File FileName="IEatHealthy/MongoClientFactory.cs" Line="16" Column="80" />
+      <File FileName="IEatHealthy/Views/Home/Index.cshtml" Line="210" Column="113" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
