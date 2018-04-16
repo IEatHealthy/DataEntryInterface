@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.HttpOverrides;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using IEatHealthy.Models;
-using Unity.AspNet.Mvc;
-using IEatHealthy;
+using Microsoft.AspNetCore.Http.Features;
+
 
 namespace IEatHealthy
 {
@@ -27,6 +22,7 @@ namespace IEatHealthy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<FormOptions>(x => x.ValueCountLimit = 4096);
             services.AddMvc();
 
             //auto map all classes

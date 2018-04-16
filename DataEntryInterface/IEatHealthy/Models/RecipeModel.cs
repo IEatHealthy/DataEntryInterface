@@ -20,12 +20,32 @@ namespace IEatHealthy.Models
         public float amount { get; set; }
     }
 
+    public enum foodType
+    {
+        italian = 1,
+        mexican = 2,
+        chinese = 3,
+        brazilian = 4,
+        american = 5,
+        japanese = 6,
+        indian = 7,
+        thai = 8,
+        greek = 9,
+        spanish = 10,
+        french = 11,
+        german = 12,
+        portugese = 13,
+        other = 30
+    };
+
     public class Recipe
     {
         [BsonId]
         public ObjectId _id { get; set; }
         [BsonElement("name")]
         public string name { get; set; }
+        [BsonElement("typeOfFood")]
+        public foodType typeOfFood { get; set; }
         [BsonElement("difficulty")]
         public DifficultyType difficulty { get; set; }
         [BsonElement("servings")]

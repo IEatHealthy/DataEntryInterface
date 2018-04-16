@@ -39,6 +39,40 @@
                     @Html.TextBox("name", null, new{ @class = "form-control form-group", placeholder ="Name of Recipe"})
                 </div> 
                 <div class="panel-heading">
+                    Type of Food 
+                </div>
+                <div class="panel-body">
+                    @Html.RadioButton("typeOfFood", foodType.italian, false)     Italian 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.mexican, false) Mexican  
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.chinese, false) Chinese 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.brazilian, false) Brazilian 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.american, false) American 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.japanese, false) Japanese 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.indian, false) Indian 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.thai, false) Thai 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.greek, false) Greek 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.spanish, false) Spanish 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.french, false) French  
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.german, false) German 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.portugese, false) Portugese 
+                    <br>
+                    @Html.RadioButton("typeOfFood", foodType.other, true) Other 
+                    <br>
+                   
+                </div>
+                <div class="panel-heading">
                     Author
                 </div>
                 <div class="panel-body">
@@ -55,11 +89,11 @@
                     Difficulty
                  </div>
                 <div class="panel-body">
-                    Easy @Html.RadioButton("Difficulty", DifficultyType.easy, true)
+                    Easy @Html.RadioButton("difficulty", DifficultyType.easy, true)
                     <br>
-                    Intermediate  @Html.RadioButton("Difficulty", DifficultyType.intermediate, false)
+                    Intermediate  @Html.RadioButton("difficulty", DifficultyType.intermediate, false)
                     <br>
-                    Hard @Html.RadioButton("Difficulty", DifficultyType.hard, false)
+                    Hard @Html.RadioButton("difficulty", DifficultyType.hard, false)
                     <br>
                 </div>
                 <div class="panel-heading">
@@ -161,7 +195,7 @@
                     @{
                         List<Ingredient> ingredientsFound = ViewData["ingredientsFound"] as List<Ingredient>;
 
-                        for (int i = 0; i < ingredientsFound.Count; i++)
+                        for (int i = 0; i < ingredientsFound.Count && i < 500; i++)
                         {
                             <div class="container-fluid">
                                 <div class="row form-group">
