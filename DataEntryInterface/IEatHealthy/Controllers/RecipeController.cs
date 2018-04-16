@@ -104,7 +104,7 @@ namespace IEatHealthy.Controllers
             var collection = db.GetCollection<Ingredient>("ingredients");
 
             var filter = Builders<Ingredient>.Filter.Regex("shrtDesc", new BsonRegularExpression(textToFind, "i"));
-            var listOfIngredients = collection.Find(filter).ToList();
+            var listOfIngredients = collection.Find(filter).Limit(200).ToList();
 
             //ViewData stores the ingredients returned to pass data from controller to view. 
             ViewData["ingredientsFound"] = listOfIngredients;
